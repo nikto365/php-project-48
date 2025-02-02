@@ -1,0 +1,30 @@
+#!/usr/bin/env php
+
+<?php
+
+function showHelp() {
+    echo "Generate diff\n";
+    echo "Usage:\n";
+    echo "gendiff (-h|--help)\n";
+    echo " gendiff (-v|--version)\n";
+    echo "Options:\n";
+    echo "-h --help                     Show this screen\n";
+    echo "-v --version                  Show version\n";
+}
+
+if ($argc > 1) {
+    $flag = $argv[1];
+
+    if ($flag === '-h' || $flag === '--help') {
+        showHelp();
+        exit(0);
+    }
+
+    if ($flag === '-h' || $flag === '--version') {
+        echo "gendiff версия 1.0\n";
+        exit(0);
+    }
+}
+
+// Если флаг не передан, выводим минимальную справку или выполняем основную логику
+echo "gendiff выполнен без флагов.\n";
