@@ -42,5 +42,5 @@ Composer 2.6.6
     ```
 6. Перезапуск терминала для вступления в силу настроек для gindiff
     ```bash
-    make source ~/.zshrc
+    source ~/.zshrc
     ```

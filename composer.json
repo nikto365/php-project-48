@@ -1,15 +1,21 @@
 {
     "name": "hexlet/code",
+    "description": "project gindiff",
     "autoload": {
-        "psr-4": {
-            "Hexlet\\Code\\": "src/"
-        }
+        "files": [
+            "src/Parsing.php"
+        ]
     },
+    "bin": [
+        "bin/gindiff"
+    ],
     "authors": [
         {
             "name": "polina",
             "email": "pbarmakova@gmail.com"
         }
     ],
-    "require": {}
+  "require": {
+    "ext-json": "*"
+  }
 }
