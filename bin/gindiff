@@ -3,13 +3,19 @@
 <?php
 
 function showHelp() {
+    echo "\n";
     echo "Generate diff\n";
+    echo "\n";
     echo "Usage:\n";
-    echo "gendiff (-h|--help)\n";
-    echo " gendiff (-v|--version)\n";
+    echo "  gendiff (-h|--help)\n";
+    echo "  gendiff (-v|--version)\n";
+    echo "  gendiff [--format <fmt>] <firstFile> <secondFile>\n";
+    echo "\n";
     echo "Options:\n";
-    echo "-h --help                     Show this screen\n";
-    echo "-v --version                  Show version\n";
+    echo "  -h --help                     Show this screen\n";
+    echo "  -v --version                  Show version\n";
+    echo "  --format <fmt>                Report format [default: stylish]";
+
 }
 
 if ($argc > 1) {
