@@ -43,7 +43,8 @@ if ($argc === 2) {
     }
 }
 if ($argc === 3) {
-    echo genDiff(($argv[1]), ($argv[2]));
+    $diff = genDiff(($argv[1]), ($argv[2]));
+    echo $diff;
 }
 if ($argc > 3) {
     echo "gendiff может сравнить только два файла.\n";

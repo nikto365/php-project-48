@@ -17,3 +17,7 @@ validate:
 # Запуск phpcs - сниффер
 lint:
 	composer exec --verbose phpcs -- --standard=PSR12 src bin
+
+# Запуск тестов
+test:
+	vendor/bin/phpunit --bootstrap vendor/autoload.php tests
