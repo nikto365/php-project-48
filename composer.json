@@ -1,9 +1,10 @@
 {
     "name": "hexlet/code",
-    "description": "project gindiff",
+    "description": "project Differ",
     "autoload": {
         "files": [
-            "src/Parsing.php"
+            "src/Parsing.php",
+            "src/Differ.php"
         ]
     },
     "bin": [

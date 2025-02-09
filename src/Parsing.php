@@ -1,11 +1,9 @@
 <?php
 
-namespace Gindiff\Parsing;
+namespace Differ\Parsing;
 
-function runParsing($fileOne, $fileTwo)
+function runParsing($file)
 {
-    $fileContents1 = file_get_contents($fileOne);
-    $fileContents2 = file_get_contents($fileTwo);
-    var_dump(json_decode($fileContents1));
-    var_dump(json_decode($fileContents2));
+    $fileContents = file_get_contents($file);
+    return (json_decode($fileContents, true));
 }
