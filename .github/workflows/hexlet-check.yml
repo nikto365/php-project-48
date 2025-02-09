@@ -43,3 +43,18 @@ jobs:
       - name: Run PHPUnit
         run: |
           vendor/bin/phpunit --configuration phpunit.xml
+          
+      # Запуск тестов покрытия
+      - name: Run PHPUnit tests with code coverage
+        run: |
+          vendor/bin/phpunit --coverage-clover=build/logs/clover.xml
+          
+      # Загрузка в CodeClimate
+      - name: Upload coverage to CodeClimate
+        run: |
+          curl -L https://codeclimate.com/downloads/test-reporter/codeclimate-test-reporter-latest-linux-amd64 > codeclimate-test-reporter
+          chmod +x codeclimate-test-reporter
+          ./codeclimate-test-reporter format-coverage build/logs/clover.xml
+          ./codeclimate-test-reporter upload-coverage
+        env:
+          CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
