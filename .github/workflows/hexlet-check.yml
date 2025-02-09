@@ -27,7 +27,7 @@ jobs:
       - name: Set up PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '8.0'  # Замените на вашу версию PHP
+          php-version: '8.4.3'  # Замените на вашу версию PHP
 
       # Установка зависимостей с помощью Composer
       - name: Install dependencies
