@@ -2,6 +2,7 @@
 [![Actions Status](https://github.com/nikto365/php-project-48/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/nikto365/php-project-48/actions)
 [![Maintainability](https://api.codeclimate.com/v1/badges/5e82b7e77f3b0ad436bc/maintainability)](https://codeclimate.com/github/nikto365/php-project-48/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/5e82b7e77f3b0ad436bc/test_coverage)](https://codeclimate.com/github/nikto365/php-project-48/test_coverage)
+[![tests-check](https://github.com/nikto365/php-project-48/actions/workflows/test-check.yml/badge.svg)](https://github.com/nikto365/php-project-48/actions/workflows/test-check.yml)
 
 # gendiff
 
