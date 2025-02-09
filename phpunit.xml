@@ -10,9 +10,4 @@
     <php>
         <ini name="memory_limit" value="1G" />
     </php>
-    <coverage processUncoveredFiles="true">
-        <reporting>
-            <clover outputFile="build/logs/clover.xml"/>
-        </reporting>
-    </coverage>
 </phpunit>
