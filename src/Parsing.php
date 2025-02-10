@@ -1,10 +1,12 @@
 <?php
 
 namespace Differ\Parsing;
+
 use Symfony\Component\Yaml\Yaml;
 use Symfony\Component\Yaml\Exception\ParseException;
 
-function is_yaml_file($file) {
+function is_yaml_file($file)
+{
     $extension = pathinfo($file, PATHINFO_EXTENSION);
     if ($extension !== 'yaml' && $extension !== 'yml') {
         return false;
@@ -19,7 +21,8 @@ function is_yaml_file($file) {
     }
 }
 
-function is_json_file($file) {
+function is_json_file($file)
+{
     // Проверка расширения файла (не обязательно, но полезно)
     $extension = pathinfo($file, PATHINFO_EXTENSION);
     if ($extension !== 'json') {

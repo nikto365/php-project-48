@@ -4,6 +4,15 @@ namespace Differ\Differ;
 
 use function Differ\Parsing\runParsing;
 
+// Функция для обработки значений
+function formatValue($value)
+{
+    if (is_array($value)) {
+        return different($value, $value);
+    }
+    return $value;
+}
+
 function different($array1, $array2): string
 {
     $differentValues = '';
@@ -28,21 +37,21 @@ function different($array1, $array2): string
     // Формируем строки с разницей
     foreach ($allKeys as $value) {
         if (in_array($value, $onlyInFirst)) {
-            $differentValues = $differentValues . "- " . $value . ": " . $array1[$value] . PHP_EOL;
+            $differentValues .= "- " . $value . ": " . formatValue($array1[$value]) . PHP_EOL;
         }
         if (in_array($value, $onlyInSecond)) {
-            $differentValues = $differentValues . "+ " . $value . ": " . $array2[$value] . PHP_EOL;
+            $differentValues .= "+ " . $value . ": " . formatValue($array2[$value]) . PHP_EOL;
         }
         if (in_array($value, $commonKeys)) {
             if ($array1[$value] === $array2[$value]) {
-                $differentValues = $differentValues . "  " . $value . ": " . $array1[$value] . PHP_EOL;
+                $differentValues .= "  " . $value . ": " . formatValue($array1[$value]) . PHP_EOL;
             } else {
-                $differentValues = $differentValues . "- " . $value . ": " . $array1[$value] . PHP_EOL;
-                $differentValues = $differentValues . "+ " . $value . ": " . $array2[$value] . PHP_EOL;
+                $differentValues .= "- " . $value . ": " . formatValue($array1[$value]) . PHP_EOL;
+                $differentValues .= "+ " . $value . ": " . formatValue($array2[$value]) . PHP_EOL;
             }
         }
     }
-
+    $differentValues = "{" . PHP_EOL . $differentValues . "}" . PHP_EOL;
     return($differentValues);
 }
 
